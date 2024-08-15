@@ -5,10 +5,7 @@
     let seccion = [
         {id: 'entradas', nombre:'Entradas', descripcion:""},
         {id: 'fritos', nombre:'Fritos', descripcion:""},
-        {id: 'kids', nombre:'Menú Kids', descripcion:""},
-        {id: 'tostadas', nombre:'Tostadas', descripcion:""},
         {id: 'fria', nombre:'Barra Fría', descripcion:""},
-        {id: 'aguachiles', nombre:'Aguachiles', descripcion:""},
         {id: 'ensaladas', nombre:'Ensaladas', descripcion:""},
         {id: 'tacos', nombre:'Tacos', descripcion:""},
         {id: 'especialidades', nombre:'Especialidades', descripcion:""},
@@ -16,8 +13,8 @@
         {id: 'pastas', nombre:'Pastas', descripcion:""},
         {id: 'arroz-frito', nombre:'Arroz Frito', descripcion:""},
         {id: 'sushi', nombre:'Sushi', descripcion:""},
+        {id: 'kids', nombre:'Menú Kids', descripcion:""},
         {id: 'postres', nombre:'Postres', descripcion:""},
-        {id: 'bebidas', nombre:'Bebidas', descripcion:""},
     ]
 
     let seccionBebidas = [
