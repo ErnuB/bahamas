@@ -18,13 +18,14 @@
     ]
 
     let seccionBebidas = [
-        {id:'mok-tails', nombre:'Mock-tails', descripcion:""},
+        {id:'mock-tails', nombre:'Mock-tails', descripcion:""},
         {id:'cervezas', nombre:'Cervezas', descripcion:""},
         {id:'bebidas', nombre:'Bebidas', descripcion:""},
-        {id:'mixologia', nombre:'Mixología Bahamas', descripcion:""},
-        {id:'cocteleria', nombre:'Coctelería Clásica', descripcion:""},
+        {id:'mixologia', nombre:'Coctelería de la casa', descripcion:""},
+        {id:'cocteleria', nombre:'Coctelería Tradicional Tiki', descripcion:""},
         {id:'digestivos', nombre:'Digestivos & Café', descripcion:""},
         {id:'destilados', nombre:'Destilados', descripcion:""},
+        {id:'destilados-botellas', nombre:'Botellas', descripcion:""},
     ]
     
     const dispatch = createEventDispatcher();
@@ -73,7 +74,7 @@
         </div>
       </div>
   {#if isNavOpen}
-      <nav id="nav-bar" class="flex flex-col py-3 bg-white">
+      <nav id="nav-bar" class="flex flex-col py-3 bg-slate-200 border-x-2 border-b-2 border-verde-bahamas">
           {#each seccion as seccionItem}
               <a href="#{seccionItem.id}" class="px-4 text-verde-bahamas py-1 w-full drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)] text-xl font-semibold uppercase" on:click={closeNav}>{seccionItem.nombre}</a>
           {/each}
@@ -94,7 +95,7 @@
         </div>
       </div>
   {#if isNavOpen}
-      <nav id="nav-bar" class="flex flex-col py-3 bg-white">
+      <nav id="nav-bar" class="flex flex-col py-3 bg-slate-200 border-x-2 border-b-2 border-verde-bahamas">
           {#each seccionBebidas as seccionItemBebidas}
               <a href="#{seccionItemBebidas.id}" class="px-4 text-verde-bahamas py-1 w-full drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)] text-xl font-semibold uppercase" on:click={closeNav}>{seccionItemBebidas.nombre}</a>
           {/each}
