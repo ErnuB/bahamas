@@ -4,6 +4,7 @@
     import Modal from './Modal.svelte'
 	import GotoTop from './GotoTop.svelte'
     import Paralax from './Paralax.svelte';
+	import Carrusel from './Carrusel.svelte';
 
     let menu = false;
 
@@ -48,8 +49,8 @@
 
     let platillos = [
         {categoria: "entradas", nombre: "Nigiris", descripcion: "(4 piezas) Camarón, atún, salmón, pulpo.", precio: "$200", imagen: "/img/niguiris.jpg"},
-        {categoria: "entradas", nombre: "Curricanes.", descripcion: "(4 piezas) De atún y salmón, rellenos de mango, tampico, pepino y aguacate, bañados en rayúy salsa ponzú, coronado con ajonjolí, cebollín, serrano y germinado.", precio: "$200", imagen: ""},
-        {categoria: "entradas", nombre: "Tiraditos", descripcion: "Atún o salmón salseado con el toque especial del chef.", precio: "$220", imagen: "/img/tiradito-salmon.jpg"},
+        {categoria: "entradas", nombre: "Curricanes.", descripcion: "(4 piezas) De atún y salmón, rellenos de mango, tampico, pepino y aguacate, bañados en rayúy salsa ponzú, coronado con ajonjolí, cebollín, serrano y germinado.", precio: "$200", imagen: "/img/curricanes.jpg"},
+        {categoria: "entradas", nombre: "Tiraditos", descripcion: "Atún o salmón salseado con el toque especial del chef.", precio: "$220", imagen: "/img/tiradito.jpg"},
         {categoria: "entradas", nombre: "Shot de mariscos", descripcion: "Camarón crudo, pulpo y pepino", precio: "$60", imagen: "/img/shot-marisco.jpg"},
         {categoria: "entradas", nombre: "Paté de camarón o marlin", descripcion: "Acompañado de totopos o galletas.", precio: "$150", imagen: "/img/pate-camaron.jpg"},
         {categoria: "entradas", nombre: "Esferas Nassau de atún y salmón", descripcion: "(4 piezas) Rellenas de tampico y philadelphia.", precio: "$220", imagen: ""},
@@ -60,7 +61,7 @@
         {categoria: "fritos", nombre: "Chicharrón de Rib Eye", descripcion: "Montado sobre cama de guacamole.", precio: "$280", imagen: "/img/chicharron-rib-eye.jpg"},
         {categoria: "fritos", nombre: "Camarones roca", descripcion: "Camarones tempura bañados en salsa especial de la casa", precio: "$220", imagen: "/img/camaron-roca.jpg"},
         {categoria: "fritos", nombre: "Camarones Long Island", descripcion: "Bañados en crema poblana, al gratín.", precio: "$240", imagen: ""},
-        {categoria: "fritos", nombre: "Camarones sweety", descripcion: "Camarones crujientes marinados en crema caramelizada.", precio: "$220", imagen: ""},
+        {categoria: "fritos", nombre: "Camarones sweety", descripcion: "Camarones crujientes marinados en crema caramelizada.", precio: "$220", imagen: "/img/camaron-sweety.jpg"},
         {categoria: "fritos", nombre: "Camarones al coco", descripcion: "Tradicionales camarones al coco acompañados con salsa agridulce de mango.", precio: "$220", imagen: ""},
         {categoria: "tostadas", nombre: "Pink sands", descripcion: "Tostada de atún marinado, aguacate, cebollín, ajonjolí y germinado, acompañado con salsa ponzú.", precio: "$110", imagen: "/img/pink-sands.jpg"},
         {categoria: "tostadas", nombre: "Atún crunch", descripcion: "Tostada de atún marinado, aguacate y un crunch de surimi, acompañado con salsa ponzú.", precio: "$125", imagen: "/img/atun-crunch.jpg"},
@@ -71,56 +72,61 @@
         {categoria: "fria", nombre: "Aguachile Rojo", descripcion: "Camarón crudo o cocido bañado en salsa de chile de árbol.", precio: "$250", imagen: "/img/aguachile-rojo.jpg"},
         {categoria: "fria", nombre: "Aguachile Verde", descripcion: "Camarón crudo o cocido bañado en salsa de chile serrano.", precio: "$250", imagen: "/img/aguachile-verde.jpg"},
         {categoria: "fria", nombre: "Aguachile Negro", descripcion: "Camarón crudo o cocido bañado en salsas negras preparadas.", precio: "$250", imagen: "/img/aguachile-negro.jpg"},
-        {categoria: "fria", nombre: "Aguachile Mango-habanero", descripcion: "Camarón crudo o cocido bañado en salsa mango y habanero.", precio: "$250", imagen: ""},
+        {categoria: "fria", nombre: "Aguachile Mango-Habanero", descripcion: "Camarón crudo o cocido bañado en salsa mango y habanero.", precio: "$250", imagen: "/img/aguachile-mango-habanero.jpg"},
         {categoria: "fria", nombre: "Mariscada", descripcion: "Combinación de mariscos; camarón cocido, camarón crudo, atún y pulpo, para picar", precio: "$450", imagen: ""},
         {categoria: "fria", nombre: "Coctail de camarón", descripcion: "Coctail de camarón cocido con tomate, cebolla morada, pepino en jugo de camarón.", precio: "$250", imagen: ""},
         {categoria: "fria", nombre: "Coctail de Pulpo", descripcion: "Coctail de pulpo cocido con tomate, cebolla morada, pepino en jugo de camarón.", precio: "$250", imagen: ""},
         {categoria: "ensaladas", nombre: "Cesar", descripcion: "Mix de lechugas, parmesano fresco, aceituna negra, crotones, pollo a la plancha y su tradicional aderezo cesar.", precio: "$200", imagen: ""},
-        {categoria: "ensaladas", nombre: "Cabbage beach", descripcion: "Espinaca baby, queso de cabra, arándanos secos, fresa y nuez, bañada en miel mostaza.", precio: "$195", imagen: ""},
-        {categoria: "ensaladas", nombre: "Berry island", descripcion: "Mix de lechugas, pepino, tomate cherry, aguacate y 100 gr. de camarones al mojo de ajo con un toque de vinagre balsámico, chimichurri blueberry fresca.", precio: "$195", imagen: ""},
+        {categoria: "ensaladas", nombre: "Cabbage beach", descripcion: "Espinaca baby, queso de cabra, arándanos secos, fresa y nuez, bañada en miel mostaza.", precio: "$195", imagen: "/img/cabbage-beach.jpg"},
+        {categoria: "ensaladas", nombre: "Berry island", descripcion: "Mix de lechugas, pepino, tomate cherry, aguacate y 100 gr. de camarones al mojo de ajo con un toque de vinagre balsámico, chimichurri blueberry fresca.", precio: "$195", imagen: "/img/berry-island.jpg"},
         {categoria: "tacos", nombre: "Gobernador", descripcion: "", precio: "$110", imagen: "/img/taco-gobernador.jpg"},
         {categoria: "tacos", nombre: "Costra camarón", descripcion: "", precio: "$125", imagen: "/img/costra-camaron.jpg"},
         {categoria: "tacos", nombre: "Costra rib eye", descripcion: "", precio: "$140", imagen: "/img/costra-ribeye.jpg"},
         {categoria: "tacos", nombre: "Costra arrachera", descripcion: "", precio: "$125", imagen: "/img/costra-arrachera.jpg"},
         {categoria: "tacos", nombre: "Bahamas", descripcion: "Atún o salmón en salsa macha.", precio: "$135", imagen: "/img/taco-bahamas.jpg"},
         {categoria: "tacos", nombre: "Vampiro mar y tierra", descripcion: "Camarón y rib eye.", precio: "$140", imagen: "/img/vampiro.jpg"},
-        {categoria: "especialidades", nombre: "Pechuga de pollo", descripcion: "Rellena de queso y tocino sobre cama de puré de papa.", precio: "$265", imagen: ""},
-        {categoria: "especialidades", nombre: "Rib eye al ajo y romero", descripcion: "(350 gr.) Con cebollita asada, espárragos y tomate cherry.", precio: "$680", imagen: "/img/rib-eye-romero.jpg"},
+        {categoria: "especialidades", nombre: "Pechuga de pollo", descripcion: "Rellena de queso y tocino sobre cama de puré de papa.", precio: "$295", imagen: "/img/pechuga.jpg"},
+        {categoria: "especialidades", nombre: "Rib eye al ajo y romero", descripcion: "(350 gr.) Con cebollita asada, espárragos y tomate cherry.", precio: "$750", imagen: "/img/rib-eye-romero.jpg"},
         {categoria: "especialidades", nombre: "Pulpo al ajillo", descripcion: "Pulpo entero en cama de arroz frito.", precio: "$340", imagen: ""},
         {categoria: "especialidades", nombre: "Salmón Rose Island", descripcion: "Sobre guiso de mango, morrones, tomillo y echalote, bañado en salsa tamarindo spicy.", precio: "$360", imagen: "/img/salmon-rose-island.jpg"},
-        {categoria: "especialidades", nombre: "Costillas pig beach", descripcion: "(500 gr.) BBQ, búfalo, chilpetín-parmesano.", precio: "$350", imagen: ""},
-        {categoria: "especialidades", nombre: "Aguachile Bahamas", descripcion: "De rib eye.", precio: "$680", imagen: ""},
+        {categoria: "especialidades", nombre: "Costillas pig beach", descripcion: "(500 gr.) BBQ, búfalo, chilpetín-parmesano.", precio: "$350", imagen: "/img/costillas.jpg"},
+        {categoria: "especialidades", nombre: "Aguachile Bahamas", descripcion: "(450 gr,) De rib eye.", precio: "$750", imagen: ""},
         {categoria: "especialidades", nombre: "Salmón en crema de hinojo", descripcion: "Acompañado de salteado de espárragos, espinaca, champiñones y tomate cherry.", precio: "$360", imagen: "/img/salmon-hinojo.jpg"},
         {categoria: "parrilla", nombre: "Brochetas punta sur", descripcion: "4 piezas mixtas de res y camarón.", precio: "$350", imagen: ""},
         {categoria: "parrilla", nombre: "Corte rib eye (calidad gold prime)", descripcion: "450 gr. acompañado de espárragos con tocino, nopal asado, tomates al chimichurri y papa al horno.", precio: "$880", imagen: ""},
-        {categoria: "parrilla", nombre: "Arrachera", descripcion: "(300 gr.) Con cebollita asada y frijoles charros.", precio: "$450", imagen: ""},
+        {categoria: "parrilla", nombre: "Arrachera", descripcion: "(400 gr.) Con cebollita asada y frijoles charros.", precio: "$550", imagen: ""},
+        {categoria: "parrilla", nombre: "Vacío", descripcion: "Corte vacío en una cama de puré de papa, acompañado de una reducción de vino tinto y un mix de espinaca, betabel y esparragos asados, bañados en una vinagreta de chocolate.", precio: "$750", imagen: "/img/vacio.jpg"},
         {categoria: "parrilla", nombre: "Hamburguesa de sirloin", descripcion: "Molida de sirloin premium en pan brioche acompañada de papas.", precio: "$265", imagen: ""},
         {categoria: "pastas", nombre: "Fetuccini Alfredo", descripcion: "Con pollo o camarón.", precio: "$220", imagen: "/img/fetuccini-alfredo.jpg"},
         {categoria: "pastas", nombre: "Princess Cay", descripcion: "Camarón y pulpo bechamel y chipotle.", precio: "$250", imagen: "/img/princess-cay.jpg"},
         {categoria: "pastas", nombre: "Pasta poblana", descripcion: "Pollo o camarón.", precio: "$220", imagen: "/img/pasta-poblana.jpg"},
         {categoria: "arroz-frito", nombre: "Arroz Bahamas", descripcion: "Camarón y pulpo", precio: "$340", imagen: ""},
-        {categoria: "arroz-frito", nombre: "Arroz Lucaya", descripcion: "Cama de arroz oriental con pollo en salsa tai.", precio: "$300", imagen: ""},
+        {categoria: "arroz-frito", nombre: "Arroz Lucaya", descripcion: "Cama de arroz oriental con pollo en salsa tai.", precio: "$300", imagen: "/img/lucaya.jpg"},
         {categoria: "sushi", nombre: "Atlántico", descripcion: "Rollo natural relleno de camarón, pepino y philadelphia, forrado de aguacate, trozos de camarón empanizado y anguila, acompañado de tampico.", precio: "$240", imagen: "/img/atlantico.jpg"},
-        {categoria: "sushi", nombre: "Nassau roll", descripcion: "Rollo natural relleno de pepino y kanikama, cubierto con kanikama, encima aguacate, philadelphia y trozos de camarón empanizado, coronado con togarashi, cebollín y anguila.", precio: "$280", imagen: ""},
+        {categoria: "sushi", nombre: "Nassau roll", descripcion: "Rollo natural relleno de pepino y kanikama, cubierto con kanikama, encima aguacate, philadelphia y trozos de camarón empanizado, coronado con togarashi, cebollín y anguila.", precio: "$280", imagen: "/img/nassau.jpg"},
         {categoria: "sushi", nombre: "Samaná", descripcion: "Rollo natural relleno de philadelphia, tocino, aguacate, camarón, cubierto de salmón flameado, coronado con srirasha y ajonjolí.", precio: "$270", imagen: "/img/samana.jpg"},
-        {categoria: "sushi", nombre: "Big Major", descripcion: "Rollo natural relleno de salmón, pepino y aguacate, alga por fuera, encima sashimi de atún, con espejo de salsa ponzú y coronado con germinado.", precio: "$240", imagen: ""},
+        {categoria: "sushi", nombre: "Big Major", descripcion: "Rollo natural relleno de salmón, pepino y aguacate, alga por fuera, encima sashimi de atún, con espejo de salsa ponzú y coronado con germinado.", precio: "$240", imagen: "/img/big-mayor.jpg"},
+        {categoria: "sushi", nombre: "Elbow roll", descripcion: "Camarón pepino Filadelfia aguacate por dentro y tampico con lámina de aguacate, por fuera topping de kanikama con mango, salsa de anguila y ajonjolí.", precio: "$250", imagen: "/img/elbow.jpg"},
         {categoria: "sushi", nombre: "Cococay", descripcion: "Rollo empanizado relleno de tampico, aguacate y pepino, cubierto de spicy, encima camarones roca, cebollín y anguila.", precio: "$260", imagen: "/img/cococay.jpg"},
         {categoria: "sushi", nombre: "Exuma", descripcion: "Rollo empanizado relleno de pollo, res, chile caribe, aguacate y philadelphia, gratinado con queso gouda y coronado con tocino y salsa anguila.", precio: "$240", imagen: "/img/exuma.jpg"},
-        {categoria: "sushi", nombre: "Pig Beach", descripcion: "Rollo empanizado relleno de aguacate, pollo, res y tocino, encima philadelphia y chile serrano, sobre espejo de aderezo de cilantro y coronado con salsa de anguila.", precio: "$230", imagen: ""},
+        {categoria: "sushi", nombre: "Pig Beach", descripcion: "Rollo empanizado relleno de aguacate, pollo, res y tocino, encima philadelphia y chile serrano, sobre espejo de aderezo de cilantro y coronado con salsa de anguila.", precio: "$230", imagen: "/img/pig-beach.jpg"},
         {categoria: "sushi", nombre: "Jukanoo", descripcion: "Rollo horneado relleno de philadelphia, aguacate, surimi empanizado, encima topping de salmón spicy y sweet chilli, cubierto de ajonjolí.", precio: "$270", imagen: "/img/jukano.jpg"},
-        // {categoria: "sushi", nombre: "Flamingo roll", descripcion: "Sushi sin arroz, de atún relleno de tampico, aguacate y philadelphia.", precio: "$280", imagen: ""},
+        {categoria: "sushi", nombre: "Flamingo roll", descripcion: "Lamina de atún Philadelphia aguacate y kanikama sin arroz con salsa de anguila y ajonjolí.", precio: "$290", imagen: "/img/flamingo-roll.jpg"},
+        {categoria: "sushi", nombre: "Minerva roll", descripcion: "Rollo sin arroz, Por fuera pepino relleno de Philadelphia tampico, camarón y aguacate con topping de camarón empanizado y sriracha", precio: "$250", imagen: ""},
         {categoria: "kids", nombre: "Cajita feliz kids", descripcion: "Nuggets, cheese burger o mini sushi. Incluyen un juguete.", precio: "$220", imagen: ""},
         // {categoria: "kids", nombre: "Cajita feliz kids", descripcion: "Cheese burger, incluyen un juguete.", precio: "$200", imagen: ""},
         // {categoria: "kids", nombre: "Cajita feliz kids", descripcion: "Mini-sushi kids, incluyen un juguete.", precio: "$200", imagen: ""},
         // {categoria: "postres", nombre: "Cheesecake \"cococay\"", descripcion: "Base de lotus con coco.", precio: "", imagen: ""},
-        {categoria: "postres", nombre: "Apple's struddel", descripcion: "Acompañado de helado vainilla.", precio: "$180", imagen: ""},
-        {categoria: "postres", nombre: "Rocking cake", descripcion: "Pastel de helado con caramelo y hojaldre.", precio: "$180", imagen: ""},
+        {categoria: "postres", nombre: "Apple's struddel", descripcion: "Acompañado de helado vainilla.", precio: "$180", imagen: "/img/struddel.jpg"},
+        {categoria: "postres", nombre: "Rocking cake", descripcion: "Pastel de helado con caramelo y hojaldre.", precio: "$180", imagen: "/img/rocking-cake.jpg"},
+        {categoria: "postres", nombre: "Lotus Strawberry Cheesecake", descripcion: ".", precio: "$250", imagen: "/img/lotus.jpg"},
+        {categoria: "postres", nombre: "Chocolate Lover", descripcion: "Pastel Chocolate Lover coronado de chocolate en trozos, hojas de oro y fresas acompañado de nieve de carajillo sobre polvo de lotus y cajeta.", precio: "$250", imagen: "/img/chocolate-lover.jpg"},
         {categoria: "postres", nombre: "Sampler de helados", descripcion: "Degustación de nieve artesanal en cono waffle.", precio: "$180", imagen: ""},
         // {categoria: "postres", nombre: "Flan napolitano", descripcion: "", precio: "", imagen: ""},
     ]
 
     let bebidas = [
-        {categoria: "mock-tails", nombre: "Bahamas Berries", descripcion: "Frutos rojos macerados con té de frutos rojos, lima, jarabe narural y refresco de lima.", precio: "$100", imagen: "/img/bahamas-berries.jpg"},
+        {categoria: "mock-tails", nombre: "Bahamas Berries", descripcion: "Frutos rojos macerados con té de frutos rojos, lima, jarabe narural y refresco de lima.", precio: "$100", imagen: ""},
         {categoria: "mock-tails", nombre: "Tropical Passionfruit", descripcion: "Passionfrut syrup, jugo de piña, jugo de limón, menta y agua natural o mineral.", precio: "$100", imagen: "/img/tropical-passionfruit.jpg"},
         {categoria: "mock-tails", nombre: "Sunrise Bahamas", descripcion: "Fresa macerada con azúcar, albaca, jugo de naranja, jugo de toronja y jugo de limón", precio: "$100", imagen: ""},
         {categoria: "mock-tails", nombre: "Purple cherry", descripcion: "Almibar de cereza, limón, menta, refresco de lima, butterfly pea flower tea.", precio: "$100", imagen: "/img/purple-cherry.jpg"},
@@ -144,9 +150,9 @@
         {categoria: "bebidas", nombre: "Boost", descripcion: "", precio: "$65", imagen: ""},
         {categoria: "mixologia", nombre: "Sweet pineapple", descripcion: "Tequila blanco, licor de narajanja, miel de agave, jugo de piña y jugo de limón real.", precio: "$210", imagen: "/img/sweet-pineapple.jpg"},
         {categoria: "mixologia", nombre: "Flamingo", descripcion: "Vodka, licor strega, cordial de frutos rojos y pimineta rosa.", precio: "$200", imagen: "/img/flamingo.jpg"},
-        {categoria: "mixologia", nombre: "Guanaba Bahia", descripcion: "Puré de guanabana, mango syrup, jugo de lima y soda", precio: "$180", imagen: "/img/guanabana.jpg"},
+        {categoria: "mixologia", nombre: "Guanaba Bahia", descripcion: "Puré de guanabana, mango syrup, jugo de lima y soda", precio: "$180", imagen: "/img/guanabana-bahia.jpg"},
         // {categoria: "mixologia", nombre: "Citrus frangola", descripcion: "Mermelada de fresa, jugo de limón real, jugo de toronja, jugo de naranja", precio: "$200", imagen: ""},
-        {categoria: "mixologia", nombre: "Nassau", descripcion: "Compota de lychee, limón real, butterfly pea flower, etiqueta negra", precio: "$200", imagen: "/img/nassau.jpg"},
+        {categoria: "mixologia", nombre: "Nassau", descripcion: "Compota de lychee, limón real, butterfly pea flower, etiqueta negra", precio: "$200", imagen: ""},
         {categoria: "mixologia", nombre: "Mangorita smoked", descripcion: "Tequila 30-30 blanco, licor de chile ancho reyes, compota de mango, miel de agave, paleta de hielo.", precio: "$225", imagen: "/img/margarita-smoked.jpg"},
         {categoria: "cocteleria", nombre: "Piña Colada", descripcion: "Ron blanco, crema de coco, jarabe, jugo de piña", precio: "$150", imagen: "/img/pina-colada.jpg"},
         {categoria: "cocteleria", nombre: "Mai Tai", descripcion: "Ron añejo, orgeat, jugo de limón, menta, curacao azul.", precio: "$145", imagen: "/img/mai-tai.jpg"},
@@ -159,11 +165,11 @@
         {categoria: "digestivos", nombre: "Café & Digestivos", descripcion: "titulo", precio: "", imagen: ""},
         {categoria: "digestivos", nombre: "Americano", descripcion: "", precio: "$60", imagen: ""},
         {categoria: "digestivos", nombre: "Espresso", descripcion: "", precio: "$60", imagen: ""},
-        {categoria: "digestivos", nombre: "Carajillo", descripcion: "", precio: "$130", imagen: ""},
+        {categoria: "digestivos", nombre: "Carajillo", descripcion: "", precio: "$130", imagen: "/img/carajillo.jpg"},
         {categoria: "digestivos", nombre: "Carajillo Baileys", descripcion: "", precio: "$160", imagen: ""},
         {categoria: "digestivos", nombre: "Carajillo Affogato", descripcion: "", precio: "$200", imagen: ""},
         {categoria: "digestivos", nombre: "Carajillo Mazapán", descripcion: "", precio: "$200", imagen: ""},
-        {categoria: "digestivos", nombre: "Carajillo Ferrero", descripcion: "", precio: "$220", imagen: ""},
+        {categoria: "digestivos", nombre: "Carajillo Ferrero", descripcion: "", precio: "$220", imagen: "/img/carajillo-ferrero.jpg"},
         {categoria: "digestivos", nombre: "Strega", descripcion: "", precio: "$130", imagen: ""},
         {categoria: "digestivos", nombre: "Baileys", descripcion: "", precio: "$130", imagen: ""},
         {categoria: "digestivos", nombre: "kahlúa", descripcion: "", precio: "$100", imagen: ""},
@@ -301,12 +307,12 @@
 
 </script>
 
-<div class="p-12">
-    <img class="" src="/img/bahamas-logo.jpg" alt="Bahamas">
-    <div class="text-center text-verde-bahamas font-montserrat uppercase font-medium">
-        <p class="text-4xl">Menú</p>
-    </div>
+<img class="px-4 bg-white" src="/img/bahamas-logo.jpg" alt="Bahamas">
+<div class="text-center text-verde-bahamas font-montserrat uppercase font-medium">
+    <p class="py-2 text-4xl">Menú</p>
 </div>
+
+<Carrusel />
 <Navbar {menu} on:menuToggle= {handleMenuToggle}/>
 <Paralax images={parallaxImages} />
 {#if menu === false}
@@ -319,7 +325,7 @@
                     {#if platillo.imagen === ""}
                     <span class="text-lg font-semibold">{platillo.nombre}</span>
                     {:else}
-                    <button class="text-right text-lg flex items-center font-semibold" on:click={() => openModal(platillo.imagen, platillo.nombre)}>{platillo.nombre}&thinsp;<span class="material-symbols-outlined">
+                    <button class="text-left max-w-[75%] text-lg flex items-center font-semibold" on:click={() => openModal(platillo.imagen, platillo.nombre)}>{platillo.nombre}&thinsp;<span class="material-symbols-outlined">
                         photo_camera
                         </span></button>
                     {/if}
