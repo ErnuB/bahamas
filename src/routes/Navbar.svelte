@@ -23,7 +23,8 @@
         {id:'bebidas', nombre:'Bebidas', descripcion:""},
         {id:'mixologia', nombre:'Coctelería de la casa', descripcion:""},
         {id:'cocteleria', nombre:'Coctelería Tradicional Tiki', descripcion:""},
-        {id:'digestivos', nombre:'Digestivos & Café', descripcion:""},
+        {id:'cafe', nombre:'Café', descripcion:""},
+        {id:'digestivos', nombre:'Digestivos', descripcion:""},
         {id:'destilados', nombre:'Destilados', descripcion:""},
         {id:'destilados-botellas', nombre:'Botellas', descripcion:""},
     ]
@@ -67,10 +68,10 @@
           <img src="/img/bahamas-logo.png" alt="Bahamas" class="max-w-8">
         </a>
         <div class="rounded-full border-2 border-verde-bahamas px-4 py-1">
-          <button on:click={toggleMenu} class="text-verde-bahamas font-montserrat uppercase">Bebidas</button>
+          <button on:click={toggleMenu} class="text-verde-bahamas font-montserrat uppercase px-2">Bebidas</button>
         </div>
         <div class="text-verde-bahamas">
-          <button aria-expanded="{isNavOpen}" aria-controls="nav-bar" on:click={toggleNav}><span class="text-lg uppercase">Menú</span>&thinsp;<i class="fa-solid text-xl fa-bars"></i></button>
+          <button class="flex items-center" aria-expanded="{isNavOpen}" aria-controls="nav-bar" on:click={toggleNav}><span class="text-lg uppercase">Menú</span>&thinsp;<i class='bx bx-menu text-4xl'></i></button>
         </div>
       </div>
   {#if isNavOpen}
@@ -91,7 +92,7 @@
           <button on:click={toggleMenu} class="text-verde-bahamas font-montserrat uppercase">Alimentos</button>
         </div>
         <div class="text-verde-bahamas">
-          <button class="pr-6" aria-expanded="{isNavOpen}" aria-controls="nav-bar" on:click={toggleNav}><span class="text-lg uppercase">Menú</span>&thinsp;<i class="fa-solid text-xl fa-bars"></i></button>
+          <button class="flex items-center px-2"  aria-expanded="{isNavOpen}" aria-controls="nav-bar" on:click={toggleNav}><span class="text-lg uppercase">Menú</span>&thinsp;<i class='bx bx-menu text-4xl'></i></button>
         </div>
       </div>
   {#if isNavOpen}
